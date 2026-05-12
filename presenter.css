@@ -1,0 +1,77 @@
+:root {
+  --bg: #1a5eab;
+  --text: #f8fafc;
+  --subtext: #cbd5e1;
+  --slide-fill: #1a5eab;
+  --slide-bg-image: url("./src/assets/sfondo.png");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--slide-fill);
+}
+
+.stage.mode-blackout,
+.stage.mode-text {
+  background-color: var(--slide-fill);
+  background-image: var(--slide-bg-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.stage.mode-video-paused,
+.stage.mode-video-playing {
+  background: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-slide {
+  width: min(86vw, 1500px);
+  text-align: center;
+}
+
+.text-slide h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 6rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+}
+
+.text-slide p {
+  margin: 28px auto 0;
+  max-width: min(72vw, 1200px);
+  font-size: clamp(1.2rem, 2.2vw, 2.5rem);
+  line-height: 1.4;
+  color: var(--subtext);
+}
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background: black;
+}
